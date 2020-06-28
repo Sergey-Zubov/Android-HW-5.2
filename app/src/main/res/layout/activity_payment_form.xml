@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextSumForPayment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/hint_sum_for_payment"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editTextInfoAboutPayment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:hint="@string/hint_info_about_payment_card_number"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPaymentMethod"
+        app:layout_constraintStart_toStartOf="@+id/textViewPaymentMethod"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPaymentCashAtAddress" />
+
+    <Button
+        android:id="@+id/btnPaymentOk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/corners"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/btn_payment_ok"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnReturnFromPaymentForm"
+        app:layout_constraintEnd_toEndOf="@+id/editTextInfoAboutPayment"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextInfoAboutPayment" />
+
+    <TextView
+        android:id="@+id/textViewPaymentMethod"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/payment_method"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/editTextSumForPayment"
+        app:layout_constraintStart_toStartOf="@+id/editTextSumForPayment"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSumForPayment" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPaymentFromBankCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:checked="true"
+        android:text="@string/check_box_card_payment"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/editTextInfoAboutPayment"
+        app:layout_constraintTop_toBottomOf="@id/textViewPaymentMethod" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPaymentByMobilePhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/check_box_mobile_phone_payment"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxPaymentFromBankCard"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPaymentFromBankCard" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPaymentCashAtAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/check_box_payment_cash_at_address"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxPaymentByMobilePhone"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPaymentByMobilePhone" />
+
+    <Button
+        android:id="@+id/btnReturnFromPaymentForm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/corners"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/btn_main_activity"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnPaymentOk"
+        app:layout_constraintStart_toStartOf="@+id/btnPaymentOk" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

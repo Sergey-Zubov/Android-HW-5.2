@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/spinnerCountries"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerCities"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerCountries"
+        app:layout_constraintStart_toStartOf="@+id/spinnerCountries"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCountries" />
+
+    <Spinner
+        android:id="@+id/spinnerHouseNumbers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerCities"
+        app:layout_constraintStart_toStartOf="@+id/spinnerCities"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCities" />
+
+    <Button
+        android:id="@+id/btnDeliveryOk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/corners"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/btn_delivery_ok"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnReturnFromDeliveryForm"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerHouseNumbers"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinnerHouseNumbers" />
+
+    <Button
+        android:id="@+id/btnReturnFromDeliveryForm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/corners"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/btn_main_activity"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnDeliveryOk"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnDeliveryOk" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

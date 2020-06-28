@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Android-HW-5.2</string>
+    <string name="main_activity_name">Главная страница (меню)</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_toast_settings">Раздел находится в разработке</string>
+    <string name="menu_notes">Записная книжка</string>
+    <string name="menu_toast_note">Открыть записную книжку</string>
+    <string name="btn_save">Сохранить</string>
+    <string name="edit_text_hint">Введите заметку</string>
+    <string name="text_saved">Заметка сохранена</string>
+    <string name="edit_text_is_empty">Введите заметку!</string>
+    <string name="menu_task_list">Список задач</string>
+    <string name="menu_toast_task_list">Открыть список задач</string>
+    <string name="btn_task_ok">Ок</string>
+    <string name="btn_start_date">Дата начала задачи</string>
+    <string name="btn_end_date">Дата окончания задачи</string>
+    <string name="btn_task_ok_err">Временной интервал введен неверно!</string>
+    <string name="btn_date_not_selected">Временной интервал не выбран!</string>
+    <string name="menu_delivery_form">Оформление доставки</string>
+    <string name="menu_toast_delivery_form">Открыть форму доставки</string>
+    <string name="btn_delivery_ok">Ок</string>
+    <string name="delivery_address">Адрес доставки:</string>
+    <string name="house_number">дом №</string>
+    <string name="prompt_countries">Выберите страну</string>
+    <string name="prompt_cities">Выберите город</string>
+    <string name="prompt_house_numbers">Выберите номер дома</string>
+    <string-array name="countries_list">
+        <item>Россия</item>
+        <item>Украина</item>
+        <item>Белоруссия</item>
+    </string-array>
+    <string-array name="russia_cities_list">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Казань</item>
+    </string-array>
+    <string-array name="ukraine_cities_list">
+        <item>Киев</item>
+        <item>Одесса</item>
+        <item>Харьков</item>
+    </string-array>
+    <string-array name="belarus_cities_list">
+        <item>Минск</item>
+        <item>Гомель</item>
+        <item>Орша</item>
+    </string-array>
+    <string name="menu_payment_form">Форма оплаты</string>
+    <string name="menu_toast_payment_form">Открыть форму рплаты</string>
+    <string name="hint_sum_for_payment">Сумма</string>
+    <string name="hint_info_about_payment_card_number">Номер карты</string>
+    <string name="hint_info_about_payment_mobile_number">Номер телефона</string>
+    <string name="hint_info_about_payment_cash_at_address">Адрес</string>
+    <string name="btn_payment_ok">OK</string>
+    <string name="payment_method">Способ оплаты</string>
+    <string name="check_box_card_payment">с банковской карты</string>
+    <string name="check_box_mobile_phone_payment">с мобильного телефона</string>
+    <string name="check_box_payment_cash_at_address">наличными по адресу</string>
+    <string name="field_sum_contains_too_big_value">Вы ввели слишком большую сумму!</string>
+    <string name="exception_btn_payment_ok">Неверный формат данных!</string>
+    <string name="field_info_for_payment_contains_invalid_values">
+        В поле \"Информация для оплаты\" введены некоректные данные!</string>
+    <string name="field_is_empty">"Заполните все поля!"</string>
+    <string name="btn_main_activity">Главная страница</string>
+</resources>
