@@ -1,6 +1,7 @@
 package com.szubov.android_hw_52;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -21,6 +22,7 @@ public class TaskListActivity extends AppCompatActivity {
     private String mStartDateTxt;
     private long mEndDate;
     private String mEndDateTxt;
+    private static final String TAG = "MyApp";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class TaskListActivity extends AppCompatActivity {
         mBtnChooseStartDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i(TAG, "User clicked btn chooseStartDate in TaskListActivity");
                 mClndrViewStartDate.setVisibility(View.VISIBLE);
                 mClndrViewEndDate.setVisibility(View.GONE);
             }
@@ -53,6 +56,7 @@ public class TaskListActivity extends AppCompatActivity {
         mBtnChooseEndDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i(TAG, "User clicked btn chooseEndDate in TaskListActivity");
                 mClndrViewEndDate.setVisibility(View.VISIBLE);
                 mClndrViewStartDate.setVisibility(View.GONE);
             }
@@ -62,6 +66,7 @@ public class TaskListActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year,
                                             int month, int dayOfMonth) {
+                Log.i(TAG, "User selected clndrStartDate in TaskListActivity");
                 mStartDateTxt = getText(R.string.btn_start_date).toString() + ": " +
                         year + "-" + month + "-" + dayOfMonth;
                 mBtnChooseStartDate.setText(mStartDateTxt);
@@ -76,6 +81,7 @@ public class TaskListActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year,
                                             int month, int dayOfMonth) {
+                Log.i(TAG, "User selected clndrEndDate in TaskListActivity");
                 mEndDateTxt =getText(R.string.btn_end_date).toString() + ": " +
                         year + "-" + month + "-" + dayOfMonth;
                 mBtnChooseEndDate.setText(mEndDateTxt);
@@ -89,27 +95,36 @@ public class TaskListActivity extends AppCompatActivity {
         mBtnTaskOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                while (true) {
-                    if (mStartDateTxt == null || mEndDateTxt == null) {
-                        Toast.makeText(TaskListActivity.this,
-                                getText(R.string.btn_date_not_selected).toString(),
-                                Toast.LENGTH_LONG).show();
-                        break;
-                    } else if (mStartDate > mEndDate) {
-                        Toast.makeText(TaskListActivity.this,
-                                getText(R.string.btn_task_ok_err).toString(),
-                                Toast.LENGTH_LONG).show();
-                        resetDateValues();
+                Log.i(TAG, "User clicked btn taskOk in TaskListActivity");
 
+                try {
+                    while (true) {
+                        if (mStartDateTxt == null || mEndDateTxt == null) {
+                            Toast.makeText(TaskListActivity.this,
+                                    getText(R.string.btn_date_not_selected).toString(),
+                                    Toast.LENGTH_LONG).show();
+                            break;
+                        } else if (mStartDate > mEndDate) {
+                            Toast.makeText(TaskListActivity.this,
+                                    getText(R.string.btn_task_ok_err).toString(),
+                                    Toast.LENGTH_LONG).show();
+                            resetDateValues();
+
+                            break;
+                        } else {
+                            Toast.makeText(TaskListActivity.this,
+                                    mBtnChooseStartDate.getText().toString() + "\n" +
+                                            mBtnChooseEndDate.getText().toString(), Toast.LENGTH_LONG).show();
+                            resetDateValues();
+                        }
                         break;
-                    } else {
-                        Toast.makeText(TaskListActivity.this,
-                                mBtnChooseStartDate.getText().toString() + "\n" +
-                                mBtnChooseEndDate.getText().toString(), Toast.LENGTH_LONG).show();
-                        resetDateValues();
                     }
-                    break;
+                } catch (Exception ex) {
+                    Log.e(TAG, "Btn taskOk Exception in TaskListActivity", ex);
+                    Toast.makeText(TaskListActivity.this,
+                            R.string.exception_btn_ok_save, Toast.LENGTH_LONG).show();
                 }
+
             }
         });
 

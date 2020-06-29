@@ -1,6 +1,7 @@
 package com.szubov.android_hw_52;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,6 +18,7 @@ public class DeliveryFormActivity extends AppCompatActivity {
     private Spinner mSpinnerCountries;
     private Spinner mSpinnerCities;
     private Spinner mSpinnerHouseNumbers;
+    private static final String TAG = "MyApp";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class DeliveryFormActivity extends AppCompatActivity {
         mBtnDeliveryOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i(TAG, "User clicked btn deliveryOk in DeliveryFormActivity");
+
                 Toast.makeText(DeliveryFormActivity.this,
                         getText(R.string.delivery_address) + "\n" +
                         mSpinnerCountries.getSelectedItem().toString() + "\n" +
@@ -82,6 +86,7 @@ public class DeliveryFormActivity extends AppCompatActivity {
         mSpinnerCountries.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.i(TAG, "User selected spinnerCountries item in DeliveryFormActivity");
                 String[] countries = getResources().getStringArray(R.array.countries_list);
                 initSpinnerCities(countries[i]);
             }

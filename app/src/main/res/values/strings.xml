@@ -9,6 +9,7 @@
     <string name="edit_text_hint">Введите заметку</string>
     <string name="text_saved">Заметка сохранена</string>
     <string name="edit_text_is_empty">Введите заметку!</string>
+    <string name="edit_text_is_too_big">Количество символов превышает допустимое значение!</string>
     <string name="menu_task_list">Список задач</string>
     <string name="menu_toast_task_list">Открыть список задач</string>
     <string name="btn_task_ok">Ок</string>
@@ -56,7 +57,7 @@
     <string name="check_box_mobile_phone_payment">с мобильного телефона</string>
     <string name="check_box_payment_cash_at_address">наличными по адресу</string>
     <string name="field_sum_contains_too_big_value">Вы ввели слишком большую сумму!</string>
-    <string name="exception_btn_payment_ok">Неверный формат данных!</string>
+    <string name="exception_btn_ok_save">Неверный формат данных!</string>
     <string name="field_info_for_payment_contains_invalid_values">
         В поле \"Информация для оплаты\" введены некоректные данные!</string>
     <string name="field_is_empty">"Заполните все поля!"</string>

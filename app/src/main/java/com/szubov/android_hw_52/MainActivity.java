@@ -5,11 +5,13 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MyApp";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar mToolbar = findViewById(R.id.toolbarMainActivity);
         setSupportActionBar(mToolbar);
-
-
     }
 
     @Override
@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Log.i(TAG, "User selected menu item in MainActivity");
         int id = item.getItemId();
+
         switch (id) {
             case (R.id.action_open_notes): {
                 Toast.makeText(MainActivity.this, getText(R.string.menu_toast_note),

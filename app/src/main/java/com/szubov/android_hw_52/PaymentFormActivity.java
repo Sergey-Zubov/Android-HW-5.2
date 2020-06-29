@@ -2,6 +2,7 @@ package com.szubov.android_hw_52;
 
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -20,6 +21,7 @@ public class PaymentFormActivity extends AppCompatActivity {
     private CheckBox mCheckBoxPaymentCashAtAddress;
     private Button mBtnPaymentOk;
     private Button mBtnReturnFromPaymentForm;
+    private static final String TAG = "MyApp";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class PaymentFormActivity extends AppCompatActivity {
         mCheckBoxPaymentFromBankCard.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Log.i(TAG, "User selected checkBox paymentFromBankCard in PaymentFormActivity");
                 resetCheckBoxesAndPaymentInfoFiled();
                 mCheckBoxPaymentFromBankCard.setChecked(isChecked);
                 mEditTextInfoAboutPayment.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -48,6 +51,7 @@ public class PaymentFormActivity extends AppCompatActivity {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Log.i(TAG, "User selected checkBox paymentByMobilePhone in PaymentFormActivity");
                 resetCheckBoxesAndPaymentInfoFiled();
                 mCheckBoxPaymentByMobilePhone.setChecked(isChecked);
                 mEditTextInfoAboutPayment.setInputType(InputType.TYPE_CLASS_PHONE);
@@ -58,6 +62,7 @@ public class PaymentFormActivity extends AppCompatActivity {
         mCheckBoxPaymentCashAtAddress.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Log.i(TAG, "User selected checkBox paymentCashAtAddress in PaymentFormActivity");
                 resetCheckBoxesAndPaymentInfoFiled();
                 mCheckBoxPaymentCashAtAddress.setChecked(isChecked);
                 mEditTextInfoAboutPayment.setInputType(InputType.TYPE_CLASS_TEXT);
@@ -68,6 +73,7 @@ public class PaymentFormActivity extends AppCompatActivity {
         mBtnPaymentOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i(TAG, "User clicked btn paymentOk in PaymentFormActivity");
                 while (true) {
                     if (mEditTextSumForPayment.length() < 1 ||
                             mEditTextInfoAboutPayment.length() <1) {
@@ -77,7 +83,7 @@ public class PaymentFormActivity extends AppCompatActivity {
                         break;
                     } else if (mEditTextInfoAboutPayment.length() >= 100) {
                         Toast.makeText(PaymentFormActivity.this,
-                                getText(R.string.exception_btn_payment_ok).toString(),
+                                getText(R.string.exception_btn_ok_save).toString(),
                                 Toast.LENGTH_LONG).show();
                         break;
                     } else if (mEditTextSumForPayment.length() >= 15) {
@@ -130,8 +136,9 @@ public class PaymentFormActivity extends AppCompatActivity {
                                 resetPaymentForm();
                             }
                         } catch (NumberFormatException ex) {
+                            Log.e(TAG, "Btn paymentOk exception in PaymentFormActivity", ex);
                             Toast.makeText(PaymentFormActivity.this,
-                                    R.string.exception_btn_payment_ok, Toast.LENGTH_LONG).show();
+                                    R.string.exception_btn_ok_save, Toast.LENGTH_LONG).show();
                         }
                     }
                     break;
